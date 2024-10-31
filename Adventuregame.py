@@ -3,17 +3,17 @@ WIT Gsu
 Adventure Game 2024
 """
 
-#This the Introduction Function 
+# This is the Introduction Function 
 def intro():
-    #This function helps u choose your name
-    name = input("Enter what name would u like to chose for the cat:")
+    # This function helps you choose your name
+    name = input("Enter what name you would like to choose for the cat: ")
     print(name)
     print("Welcome to the Silly Cat Adventure Game!")
-    print("OHH!! I see so your name is {}.".format(name)) 
+    print("OHH!! I see, so your name is {}.".format(name)) 
     print("Your goal is to find legendary cat treasures.")
     input("Press Enter to start...")
     print("\nYou find yourself in your cozy cat bed, ready for the adventure!\n")
-    #This line means that at the end of the function,it will play the next function
+    # This line means that at the end of the function, it will play the next function
     choose_action()
 
 def search_for_clues():
@@ -37,21 +37,21 @@ def meow_for_attention():
     theadventure()
 
 def choose_action():
-    #While fucntion is like a loop, if there is no vaild choice the function will stay 
+    # While function is like a loop; if there is no valid choice, the function will stay 
     while True:
         print("\nWhat do you want to do?")
-        print("1. Look for clues around the house.\n")
-        print("2. Take a nap before the adventure.\n")
-        print("3. Meow loudly for attention.\n")
+        print("1. Look for clues around the house.")
+        print("2. Take a nap before the adventure.")
+        print("3. Meow loudly for attention.")
         choice = input("Enter the number of your choice (1, 2, or 3): ")
 
-        if (choice == "1"):
+        if choice == "1":
             search_for_clues()
             break
-        elif (choice == "2"):
+        elif choice == "2":
             take_a_nap()
             break
-        elif (choice == "3"):
+        elif choice == "3":
             meow_for_attention()
             break
         else:
@@ -63,59 +63,56 @@ def theadventure():
         print("Do you want to chase the mouse or ignore it?")
         chase_choice = input("Enter 'chase' or 'ignore': ")
         
-        if (chase_choice.lower() == "chase"):
+        if chase_choice.lower() == "chase":
             print("\nYou give chase to the mouse, but it quickly scampers away.")
             print("Oh well, it was worth a try!")
             sillyadventure()
             break
                 
-        elif (chase_choice.lower()=='ignore'):
-            print("You continue following the map")
-            sillyadventure()
+        elif chase_choice.lower() == "ignore":
+            print("\nYou decide to ignore the mouse and continue on your adventure.")
+            print("However, without chasing the mouse, your adventure comes to an end here!")
+            input("Press Enter to restart the game...")
+            main()  # Restart the game by calling main()
             break
         
         else:
-            print("Please choose from the given option")         
-        
+            print("Please choose from the given options.")         
+
 def sillyadventure():     
     while True:      
         print("\nSuddenly, you hear a loud noise coming from the kitchen.")
         print("Do you investigate the noise or continue following the map?")
         investigate_choice = input("Enter 'investigate' or 'continue': ")
         
-        if (investigate_choice.lower() == "investigate"):    
+        if investigate_choice.lower() == "investigate":    
             print("\nYou cautiously approach the kitchen and find... your human making a sandwich!")
             print("You decide to beg for some tuna and get a tasty treat!")
             sillyevent()
             break
         
-        elif(investigate_choice.lower()=="contiune"):
-            print("You ignore the nosie and conitune on your adventure")
+        elif investigate_choice.lower() == "continue":
+            print("You ignore the noise and continue on your adventure.")
             sillyevent()
             break
         
         else:
-                print("Please choose a correct option")
-                
+            print("Please choose a correct option.")
 
 def sillyevent():
-            print("\nWhile exploring, you stumble upon a friendly neighbor who offers you a bowl of milk!")
-            print("Do you accept the milk or politely decline?")
-            milk_choice = input("Enter 'accept' or 'decline': ")
-            if (milk_choice.lower() == "accept"):
-                print("\nYou happily lap up the milk, feeling grateful for the unexpected treat!")
-            else:
-                print("\nYou politely decline the milk and continue your adventure.")
-                print("\nCongratulations! You've completed your adventure and found the legendary cat treasure. You return home triumphant, ready for your next silly adventure!")
-                
-                    
-                    
+    print("\nWhile exploring, you stumble upon a friendly neighbor who offers you a bowl of milk!")
+    print("Do you accept the milk or politely decline?")
+    milk_choice = input("Enter 'accept' or 'decline': ")
+    if milk_choice.lower() == "accept":
+        print("\nYou happily lap up the milk, feeling grateful for the unexpected treat!")
+    else:
+        print("\nYou politely decline the milk and continue your adventure.")
+    print("\nCongratulations! You've completed your adventure and found the legendary cat treasure. You return home triumphant, ready for your next silly adventure!")
+
 def main():
-    #Calling my functions in main 
+    # Calling my functions in main 
     intro()
-#Running my main function 
-if (__name__ == "__main__"):
+
+# Running my main function 
+if __name__ == "__main__": 
     main()
-    
-    
-                        
