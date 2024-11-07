@@ -44,45 +44,29 @@ def meow_for_attention():
     print("\nYou meow, and your human gives you a nice pet.\n")
     theadventure()
 
-
 def theadventure():
     while True:
         print("\nYou encounter a mischievous mouse! Do you want to chase it or ignore it?")
         chase_choice = input("Enter 'chase' or 'ignore': ")
-        
+
         if chase_choice.lower() == "chase":
             print("\nYou give chase, but the mouse gets away.")
-            sillyadventure()
+            end_adventure()
             break
         elif chase_choice.lower() == "ignore":
-            print("\nYou ignore the mouse and decide to restart your adventure.")
-            main()  # Restart the game
+            print("\nYou ignore the mouse and continue exploring.")
+            end_adventure()
             break
         else:
             print("Please choose from the given options.")
 
-def sillyadventure():
-    while True:
-        print("\nYou hear a noise from the kitchen. Investigate or continue?")
-        investigate_choice = input("Enter 'investigate' or 'continue': ")
-        
-        if investigate_choice.lower() == "investigate":
-            print("\nYou find your human making a sandwich and get a treat!")
-            sillyevent()
-            break
-        elif investigate_choice.lower() == "continue":
-            sillyevent()
-            break
-        else:
-            print("Please choose a correct option.")
-
-def sillyevent():
-    print("\nYou find a neighbor offering a bowl of milk. Accept or decline?")
+def end_adventure():
+    print("\nYou meet a friendly neighbor who offers you a bowl of milk. Accept or decline?")
     milk_choice = input("Enter 'accept' or 'decline': ")
     if milk_choice.lower() == "accept":
-        print("\nYou enjoy the milk!")
+        print("\nYou happily lap up the milk and feel refreshed for more adventures!")
     else:
-        print("\nYou politely decline.")
+        print("\nYou politely decline and return home feeling content.")
     print("\nCongratulations! You've completed your adventure!")
 
 def main():
