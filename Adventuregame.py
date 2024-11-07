@@ -3,19 +3,31 @@ WIT Gsu
 Adventure Game 2024
 """
 
-def intro(): #def keyword is used to define a fucntion then followed by the name of the function, 
-#parentheses to spcify any arguments, then a colon to indicate start of the function.
+def intro(): 
+    # Defines the intro function
     name = input("Enter a name for the cat: ")
     print("Welcome to the Silly Cat Adventure Game, " + name + "!")
-    #a plain string that concatnates the user's inputed name into the statement.
+    # Concatenates the user's inputted name into the statement.
     input("Press Enter to start...\n")
-    #pausing until something is given, in this case pressing the enter key
+    # Pauses until Enter is pressed
     choose_action()
+
+def search_for_clues():
+  print("\nYou find a mysterious map under the sofa!\n")
+  theadventure()
+
+def take_a_nap():
+  print("\nYou take a quick nap and wake up refreshed.\n")
+  theadventure()
+
+def meow_for_attention():
+  print("\nYou meow, and your human gives you a nice pet.\n")
+  theadventure()
 
 def choose_action():
     while True:
         print("Choose an action:")
-        print("1. Look for clues.")
+        print("1. Search for clues.")
         print("2. Take a nap.")
         print("3. Meow for attention.")
         choice = input("Enter 1, 2, or 3: ")
@@ -32,17 +44,6 @@ def choose_action():
         else:
             print("Invalid choice. Try again.")
 
-def search_for_clues():
-    print("\nYou find a mysterious map under the sofa!\n")
-    theadventure()
-
-def take_a_nap():
-    print("\nYou take a quick nap and wake up refreshed.\n")
-    theadventure()
-
-def meow_for_attention():
-    print("\nYou meow, and your human gives you a nice pet.\n")
-    theadventure()
 
 def theadventure():
     while True:
@@ -74,3 +75,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
