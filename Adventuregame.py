@@ -1,49 +1,24 @@
 """
-WIT Gsu 
+WIT Gsu
 Adventure Game 2024
 """
 
-# This is the Introduction Function 
-def intro():
-    # This function helps you choose your name
-    name = input("Enter what name you would like to choose for the cat: ")
-    print(name)
-    print("Welcome to the Silly Cat Adventure Game!")
-    print("OHH!! I see, so your name is {}.".format(name)) 
-    print("Your goal is to find legendary cat treasures.")
-    input("Press Enter to start...")
-    print("\nYou find yourself in your cozy cat bed, ready for the adventure!\n")
-    # This line means that at the end of the function, it will play the next function
+def intro(): #def keyword is used to define a fucntion then followed by the name of the function, 
+#parentheses to spcify any arguments, then a colon to indicate start of the function.
+    name = input("Enter a name for the cat: ")
+    print("Welcome to the Silly Cat Adventure Game, " + name + "!")
+    #a plain string that concatnates the user's inputed name into the statement.
+    input("Press Enter to start...\n")
+    #pausing until something is given, in this case pressing the enter key
     choose_action()
 
-def search_for_clues():
-    print("\nYou start searching for clues around the house.")
-    print("You sniff around the living room, the kitchen, and even the bathroom!")
-    print("Suddenly, you find a mysterious map under the sofa!")
-    print("It seems to lead to the legendary cat treasure.")
-    print("You must follow this map!\n")
-    theadventure()
-
-def take_a_nap():
-    print("\nYou decide to take a quick nap before the adventure.")
-    print("Zzz... Zzz...")
-    print("\nYou wake up feeling refreshed and ready for your adventure!\n")
-    theadventure()
-
-def meow_for_attention():
-    print("\nYou let out a loud meow for attention.")
-    print("Your human hears you and comes over to pet you.")
-    print("You purr with contentment.\n")
-    theadventure()
-
 def choose_action():
-    # While function is like a loop; if there is no valid choice, the function will stay 
     while True:
-        print("\nWhat do you want to do?")
-        print("1. Look for clues around the house.")
-        print("2. Take a nap before the adventure.")
-        print("3. Meow loudly for attention.")
-        choice = input("Enter the number of your choice (1, 2, or 3): ")
+        print("Choose an action:")
+        print("1. Look for clues.")
+        print("2. Take a nap.")
+        print("3. Meow for attention.")
+        choice = input("Enter 1, 2, or 3: ")
 
         if choice == "1":
             search_for_clues()
@@ -57,62 +32,61 @@ def choose_action():
         else:
             print("Invalid choice. Try again.")
 
-def theadventure():       
-    while True:    
-        print("\nAs you follow the map, you encounter a mischievous mouse!")
-        print("Do you want to chase the mouse or ignore it?")
+def search_for_clues():
+    print("\nYou find a mysterious map under the sofa!\n")
+    theadventure()
+
+def take_a_nap():
+    print("\nYou take a quick nap and wake up refreshed.\n")
+    theadventure()
+
+def meow_for_attention():
+    print("\nYou meow, and your human gives you a nice pet.\n")
+    theadventure()
+
+
+def theadventure():
+    while True:
+        print("\nYou encounter a mischievous mouse! Do you want to chase it or ignore it?")
         chase_choice = input("Enter 'chase' or 'ignore': ")
         
         if chase_choice.lower() == "chase":
-            print("\nYou give chase to the mouse, but it quickly scampers away.")
-            print("Oh well, it was worth a try!")
+            print("\nYou give chase, but the mouse gets away.")
             sillyadventure()
             break
-                
         elif chase_choice.lower() == "ignore":
-            print("\nYou decide to ignore the mouse and continue on your adventure.")
-            print("However, without chasing the mouse, your adventure comes to an end here!")
-            input("Press Enter to restart the game...")
-            main()  # Restart the game by calling main()
+            print("\nYou ignore the mouse and decide to restart your adventure.")
+            main()  # Restart the game
             break
-        
         else:
-            print("Please choose from the given options.")         
+            print("Please choose from the given options.")
 
-def sillyadventure():     
-    while True:      
-        print("\nSuddenly, you hear a loud noise coming from the kitchen.")
-        print("Do you investigate the noise or continue following the map?")
+def sillyadventure():
+    while True:
+        print("\nYou hear a noise from the kitchen. Investigate or continue?")
         investigate_choice = input("Enter 'investigate' or 'continue': ")
         
-        if investigate_choice.lower() == "investigate":    
-            print("\nYou cautiously approach the kitchen and find... your human making a sandwich!")
-            print("You decide to beg for some tuna and get a tasty treat!")
+        if investigate_choice.lower() == "investigate":
+            print("\nYou find your human making a sandwich and get a treat!")
             sillyevent()
             break
-        
         elif investigate_choice.lower() == "continue":
-            print("You ignore the noise and continue on your adventure.")
             sillyevent()
             break
-        
         else:
             print("Please choose a correct option.")
 
 def sillyevent():
-    print("\nWhile exploring, you stumble upon a friendly neighbor who offers you a bowl of milk!")
-    print("Do you accept the milk or politely decline?")
+    print("\nYou find a neighbor offering a bowl of milk. Accept or decline?")
     milk_choice = input("Enter 'accept' or 'decline': ")
     if milk_choice.lower() == "accept":
-        print("\nYou happily lap up the milk, feeling grateful for the unexpected treat!")
+        print("\nYou enjoy the milk!")
     else:
-        print("\nYou politely decline the milk and continue your adventure.")
-    print("\nCongratulations! You've completed your adventure and found the legendary cat treasure. You return home triumphant, ready for your next silly adventure!")
+        print("\nYou politely decline.")
+    print("\nCongratulations! You've completed your adventure!")
 
 def main():
-    # Calling my functions in main 
     intro()
 
-# Running my main function 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     main()
